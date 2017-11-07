@@ -44,11 +44,18 @@
         width: 80%; /* Could be more or less, depending on screen size */
         .modal-header{
             .memo-title{
+                outline: none;
+                border: none;
                 font-size: 16px;
                 font-weight: 600;
                 color: white;
+                width: 100%;
                 margin-bottom: .5em;
-                border-bottom: solid 1px white;
+                // border-bottom: solid 1px white;
+                box-sizing: margin-box;
+                &:active, &:active {
+                    outline: none;
+                }
             }
             .close {
                 margin-top: -.7em;
@@ -87,7 +94,14 @@
             .memo-content{
                 font-size: 14px;
                 color: white;
-                margin-bottom: .5em;
+                border: none;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+                // border-top: solid 1px white;
+                &:hover, &:active{
+                    outline: none;
+                }
             }
             .memo-created-date{
                 font-size: 13px;
@@ -113,6 +127,9 @@
             font-weight: 600;
             &:hover{
                 background: #ecf0f1;
+            }
+            &:active{
+                outline: none;
             }
         }
         .clear{

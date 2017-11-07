@@ -46,11 +46,16 @@
     width: 80%;
     /* Could be more or less, depending on screen size */ }
     .modal .modal-content .modal-header .memo-title {
+      outline: none;
+      border: none;
       font-size: 16px;
       font-weight: 600;
       color: white;
+      width: 100%;
       margin-bottom: .5em;
-      border-bottom: solid 1px white; }
+      box-sizing: margin-box; }
+      .modal .modal-content .modal-header .memo-title:active, .modal .modal-content .modal-header .memo-title:active {
+        outline: none; }
     .modal .modal-content .modal-header .close {
       margin-top: -.7em;
       color: white;
@@ -81,7 +86,12 @@
     .modal .modal-content .modal-body .memo-content {
       font-size: 14px;
       color: white;
-      margin-bottom: .5em; }
+      border: none;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none; }
+      .modal .modal-content .modal-body .memo-content:hover, .modal .modal-content .modal-body .memo-content:active {
+        outline: none; }
     .modal .modal-content .modal-body .memo-created-date {
       font-size: 13px;
       color: #bababa; }
@@ -102,5 +112,7 @@
       font-weight: 600; }
       .modal .modal-content .save-button:hover {
         background: #ecf0f1; }
+      .modal .modal-content .save-button:active {
+        outline: none; }
     .modal .modal-content .clear {
       clear: both; }
