@@ -1,0 +1,53 @@
+.welcome {
+  background-color: #2980b9;
+  text-align: right;
+  padding: 1.3rem 0;
+  font-size: 15px; }
+  .welcome span {
+    color: white; }
+  .welcome .user-name {
+    font-weight: 600;
+    color: #c0392b; }
+  .welcome .logout {
+    font-family: 'Cabin', sans-serif;
+    margin-right: 1em;
+    padding: .5em 1em;
+    border: solid 2px white;
+    background: #2980b9;
+    font-size: 16px;
+    color: white;
+    font-weight: 600; }
+    .welcome .logout:hover, .welcome .logout:focus {
+      background: white;
+      transition: ease .5s;
+      color: #2980b9; }
+
+.clear {
+  clear: both; }
+
+.buttons {
+  background-color: #2980b9;
+  text-align: right;
+  padding: 1.3rem 0; }
+  .buttons span {
+    color: white; }
+  .buttons a {
+    text-decoration: none;
+    color: white; }
+    .buttons a:hover, .buttons a:focus {
+      font-weight: 600;
+      color: #c0392b; }
+  .buttons button {
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    margin-right: 1em;
+    padding: .5em 1em;
+    border: solid 2px white;
+    background: #2980b9;
+    font-size: 16px;
+    color: white;
+    font-weight: 600; }
+    .buttons button:hover, .buttons button:focus {
+      background: white;
+      transition: ease .5s;
+      color: #2980b9; }

@@ -1,0 +1,19 @@
+body {
+  font-family: 'Cabin', sans-serif;
+  margin: 0;
+  padding: 1em; }
+  body .app-title {
+    margin-left: 1em;
+    float: left;
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    background-color: #2980b9;
+    padding: 1em 0;
+    text-align: left; }
+    body .app-title a {
+      text-decoration: none;
+      color: white; }
+      body .app-title a:hover, body .app-title a:active, body .app-title a:focus, body .app-title a:visited {
+        color: white;
+        text-decoration: none; }

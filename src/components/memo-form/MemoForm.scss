@@ -1,0 +1,86 @@
+.memo-form {
+    margin-top: 1em;
+    border: solid 1px #7f8c8d;
+    .memo-title {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        // margin: 0.2em 1em;
+        padding: .8em;
+        border: none;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        border-bottom: solid 1px #7f8c8d;
+        background-color: #7f8c8d;
+        color: white;
+        &:focus{
+            outline: none;
+        }
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: white;
+            font-family: 'Cabin', sans-serif;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: white;
+            font-family: 'Cabin', sans-serif;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: white;
+            font-family: 'Cabin', sans-serif;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: white;
+            font-family: 'Cabin', sans-serif;
+        }
+    }
+    .memo-content {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: none;
+        // margin: 0.2em 1em;
+        padding: .8em;
+        width: 100%;
+        font-size: 14px;
+        &:focus{
+            outline: none;
+        }
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            font-family: 'Cabin', sans-serif;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            font-family: 'Cabin', sans-serif;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            font-family: 'Cabin', sans-serif;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            font-family: 'Cabin', sans-serif;
+        }
+    }
+    button {
+        cursor: pointer;
+        font-family: 'Cabin', sans-serif;
+        float: right;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        padding: .5em 1em;
+        border: solid 2px #d35400;
+        // border-radius: 10px;
+        background: #d35400;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        outline: none;
+        &:hover, &:focus {
+            background: white;
+            border: solid 2px #d35400;
+            transition: ease .5s;
+            color: #d35400;
+        }
+    }
+    .clear{
+        clear: both;
+    }
+}

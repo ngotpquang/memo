@@ -1,0 +1,75 @@
+.memo-form {
+  margin-top: 1em;
+  border: solid 1px #7f8c8d; }
+  .memo-form .memo-title {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: .8em;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: solid 1px #7f8c8d;
+    background-color: #7f8c8d;
+    color: white; }
+    .memo-form .memo-title:focus {
+      outline: none; }
+    .memo-form .memo-title::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: white;
+      font-family: 'Cabin', sans-serif; }
+    .memo-form .memo-title::-moz-placeholder {
+      /* Firefox 19+ */
+      color: white;
+      font-family: 'Cabin', sans-serif; }
+    .memo-form .memo-title:-ms-input-placeholder {
+      /* IE 10+ */
+      color: white;
+      font-family: 'Cabin', sans-serif; }
+    .memo-form .memo-title:-moz-placeholder {
+      /* Firefox 18- */
+      color: white;
+      font-family: 'Cabin', sans-serif; }
+  .memo-form .memo-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    padding: .8em;
+    width: 100%;
+    font-size: 14px; }
+    .memo-form .memo-content:focus {
+      outline: none; }
+    .memo-form .memo-content::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      font-family: 'Cabin', sans-serif; }
+    .memo-form .memo-content::-moz-placeholder {
+      /* Firefox 19+ */
+      font-family: 'Cabin', sans-serif; }
+    .memo-form .memo-content:-ms-input-placeholder {
+      /* IE 10+ */
+      font-family: 'Cabin', sans-serif; }
+    .memo-form .memo-content:-moz-placeholder {
+      /* Firefox 18- */
+      font-family: 'Cabin', sans-serif; }
+  .memo-form button {
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    float: right;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+    border: solid 2px #d35400;
+    background: #d35400;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    outline: none; }
+    .memo-form button:hover, .memo-form button:focus {
+      background: white;
+      border: solid 2px #d35400;
+      transition: ease .5s;
+      color: #d35400; }
+  .memo-form .clear {
+    clear: both; }

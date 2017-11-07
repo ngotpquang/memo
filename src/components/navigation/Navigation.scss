@@ -1,0 +1,65 @@
+.welcome{
+    background-color: #2980b9;
+    text-align: right;
+    padding: 1.3rem 0;
+    font-size: 15px;
+    span {
+        color: white;
+    }
+    .user-name{
+        font-weight: 600;
+        color: #c0392b;
+    }
+    .logout{
+        font-family: 'Cabin', sans-serif;
+        margin-right: 1em;
+        padding: .5em 1em;
+        border: solid 2px white;
+        // border-radius: 10px;
+        background: #2980b9;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        &:hover, &:focus {
+            background: white;
+            transition: ease .5s;
+            color: #2980b9;
+        }
+    }
+}
+.clear{
+    clear: both;
+}
+.buttons{
+    background-color: #2980b9;
+    text-align: right;
+    padding: 1.3rem 0;
+    span{
+        color: white;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        &:hover, &:focus{
+            font-weight: 600;
+            color: #c0392b;
+        }
+    }
+    button{
+        cursor: pointer;
+        font-family: 'Cabin', sans-serif;
+        margin-right: 1em;
+        padding: .5em 1em;
+        border: solid 2px white;
+        // border-radius: 10px;
+        background: #2980b9;
+        font-size: 16px;
+        color: white;
+        font-weight: 600;
+        &:hover, &:focus {
+            background: white;
+            transition: ease .5s;
+            color: #2980b9;
+        }
+    }
+}

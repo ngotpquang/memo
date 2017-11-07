@@ -1,0 +1,56 @@
+.login-form {
+  border: solid 1px #2980b9;
+  margin: 0 15em;
+  padding: 1em 2em;
+  margin-top: 2em;
+  box-sizing: border-box; }
+  .login-form h3 {
+    border-bottom: solid 2px #2980b9;
+    color: #2980b9;
+    margin-bottom: 1.5em; }
+  .login-form input {
+    border: none;
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+    border-bottom: solid 1px #2980b9;
+    font-size: 14px;
+    width: 100%; }
+    .login-form input:hover, .login-form input:focus {
+      outline: none; }
+  .login-form .button {
+    margin-top: 1.5em; }
+    .login-form .button button {
+      float: right;
+      padding: 1em;
+      margin-left: 1em;
+      border: solid 1px #2980b9;
+      background: none;
+      font-size: 14px;
+      font-weight: 550; }
+      .login-form .button button.submit-button {
+        background: #2980b9;
+        color: white; }
+        .login-form .button button.submit-button:hover, .login-form .button button.submit-button:focus {
+          font-weight: 600;
+          background: white;
+          color: #2980b9;
+          transition: 0.5s ease; }
+      .login-form .button button.clear-button {
+        border: solid 1px #2980b9;
+        color: #2980b9; }
+  .login-form .clear {
+    clear: both; }
+  .login-form .errMsg {
+    color: red;
+    font-size: 14px; }
+  .login-form .sign-up {
+    font-size: 14px;
+    color: #7f8c8d; }
+    .login-form .sign-up .sign-up-link {
+      text-decoration: none;
+      color: #2980b9; }
+      .login-form .sign-up .sign-up-link:hover, .login-form .sign-up .sign-up-link:focus {
+        font-weight: 600;
+        color: #c0392b; }
+      .login-form .sign-up .sign-up-link:active, .login-form .sign-up .sign-up-link:visited {
+        text-decoration: none; }
