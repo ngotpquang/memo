@@ -1,12 +1,9 @@
 [tabIndex] {
-  outline: none !important;
-  height: 100%; }
+  outline: none !important; }
 
 .memo {
   cursor: pointer;
-  margin-top: 1em;
-  padding: 1em;
-  height: 90%; }
+  padding: 1em; }
   .memo .memo-title {
     font-size: 16px;
     font-weight: 600;
@@ -40,12 +37,13 @@
   /* Black w/ opacity */ }
   .modal .modal-content {
     cursor: pointer;
-    margin: 20% auto;
+    margin: 10% auto;
     /* 15% from the top and centered */
     padding: 20px;
     width: 80%;
     /* Could be more or less, depending on screen size */ }
     .modal .modal-content .modal-header .memo-title {
+      cursor: text;
       outline: none;
       border: none;
       font-size: 16px;
@@ -54,7 +52,7 @@
       width: 100%;
       margin-bottom: .5em;
       box-sizing: margin-box; }
-      .modal .modal-content .modal-header .memo-title:active, .modal .modal-content .modal-header .memo-title:active {
+      .modal .modal-content .modal-header .memo-title:hover, .modal .modal-content .modal-header .memo-title:active {
         outline: none; }
     .modal .modal-content .modal-header .close {
       margin-top: -.7em;

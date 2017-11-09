@@ -2,7 +2,8 @@
   background-color: #2980b9;
   text-align: right;
   padding: 1.3rem 0;
-  font-size: 15px; }
+  font-size: 15px;
+  margin-bottom: 1em; }
   .welcome span {
     color: white; }
   .welcome .user-name {
@@ -26,6 +27,7 @@
   clear: both; }
 
 .buttons {
+  margin-bottom: 1em;
   background-color: #2980b9;
   text-align: right;
   padding: 1.3rem 0; }

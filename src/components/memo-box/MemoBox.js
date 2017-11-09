@@ -7,22 +7,28 @@ import './MemoBox.css';
 class MemoBox extends Component {
     constructor(props){
         super(props);
-        let createdDate = new Date().toDateString();
+        let createdDate = new Date().getTime();
+        let updatedDate = new Date().getTime();
+        let userId = localStorage.getItem('userId');
+        let memos = [];
+        if (userId == null){
+            memos = [
+                {id: 1, title: "Let's make it awesome", content: "You're gonna be on top", 
+                createdDate: createdDate, updatedDate: updatedDate},
+                {id: 2, title: "Let's make it awesome", content: "You're gonna be on top", 
+                createdDate: createdDate, updatedDate: updatedDate},
+                {id: 3, title: "Let's make it awesome", content: "You're gonna be on top", 
+                createdDate: createdDate, updatedDate: updatedDate},
+                {id: 4, title: "Let's make it awesome", content: "You're gonna be on top", 
+                createdDate: createdDate, updatedDate: updatedDate},
+                {id: 5, title: "Let's make it awesome", content: "You're gonna be on top", 
+                createdDate: createdDate, updatedDate: updatedDate}
+            ];
+        }
         this.state = {
             isUpdated: false,
             userId: localStorage.getItem('userId'),
-            memos: [
-                {id: 1, title: "Let's make it awesome", content: "You're gonna be on top", 
-                createdDate: createdDate},
-                {id: 2, title: "Let's make it awesome", content: "You're gonna be on top", 
-                createdDate: createdDate},
-                {id: 3, title: "Let's make it awesome", content: "You're gonna be on top", 
-                createdDate: createdDate},
-                {id: 4, title: "Let's make it awesome", content: "You're gonna be on top", 
-                createdDate: createdDate},
-                {id: 5, title: "Let's make it awesome", content: "You're gonna be on top", 
-                createdDate: createdDate}
-            ]
+            memos: memos
         }
     }
     componentWillMount(){
@@ -73,9 +79,19 @@ class MemoBox extends Component {
 
     _displayMemo(){
         return this.state.memos.map((memo) => {
-            let date = new Date(memo.createdDate);
-            let dateString = date.toDateString();
-            return <Memo isUpdated={this._fetchMemo.bind(this)} title={memo.title} content={memo.content} key={memo.id} createdDate={dateString} id={memo.id}/>
+            let createdDate = new Date(memo.createdDate);
+            let createdDateString = createdDate.toLocaleDateString() + " " 
+                + createdDate.toLocaleTimeString().slice(0, createdDate.toLocaleTimeString().lastIndexOf(':'));
+            let updatedDateString = "";
+            if (memo.updatedDate !== null){
+                let updatedDate = new Date(memo.updatedDate);
+                updatedDateString = updatedDate.toLocaleDateString() + " " 
+                + updatedDate.toLocaleTimeString().slice(0, updatedDate.toLocaleTimeString().lastIndexOf(':'));;
+            } 
+            return <Memo isUpdated={this._fetchMemo.bind(this)} 
+            title={memo.title} content={memo.content} 
+            key={memo.id} createdDate={createdDateString} id={memo.id}
+            updatedDate={updatedDateString}/>
         })
     }
 

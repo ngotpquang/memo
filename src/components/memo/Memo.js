@@ -10,17 +10,25 @@ class Memo extends Component {
       colors: ['#c0392b', '#16a085', '#2c3e50'],
     }
   }
-  // onClick={this._editMemo.bind(this)}
     render() {
       let idModal = "modal" + this.props.id;
       let idModalContent = "modal-content" + this.props.id;
       let idToolTip = "tooltip" + this.props.id;
+      let date = this.props.createdDate;
+      if (this.props.updatedDate !== ""){
+        date = this.props.updatedDate;
+      }
+      let content = this.props.content;
+      if (content.length > 200){
+        content = content.slice(0, 200);
+        content = content + '...';
+      }
       return (
         <div onKeyUp={this._closeModalEsc.bind(this)} tabIndex="0">
           <div className="memo" id={this.props.id} onClick={this._displayModal.bind(this)}>
             <div className="memo-title">{this.props.title}</div>
-            <div className="memo-content">{this.props.content}</div>
-            <div className="memo-created-date">{this.props.createdDate}</div>
+            <div className="memo-content">{content}</div>
+            <div className="memo-created-date">Updated: {date}</div>
           </div>
           <div className="modal" id={idModal}>
             <div className="modal-content" id={idModalContent} 
@@ -35,7 +43,7 @@ class Memo extends Component {
               <div className="modal-body">
                 <TextareaAutosize className="memo-content" rows={10} maxRows={15}  defaultValue={this.props.content} disabled>
                 </TextareaAutosize>
-                <div className="memo-created-date">{this.props.createdDate}</div>
+                <div className="memo-created-date">Updated: {date}</div>
               </div>
               <div className="tooltip" id={idToolTip}>Double click to edit</div>
               <button className="save-button" onClick={this._updateMemo.bind(this)}>Save</button>
