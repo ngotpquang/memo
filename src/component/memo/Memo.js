@@ -24,7 +24,7 @@ class Memo extends Component {
         content = content + '...';
       }
       return (
-        <div onKeyUp={this._closeModalEsc.bind(this)} tabIndex="0">
+        <div onKeyUp={this._closeModalEsc.bind(this)}>
           <div className="memo" id={this.props.id} onClick={this._displayModal.bind(this)}>
             <div className="memo-title">{this.props.title}</div>
             <div className="memo-content">{content}</div>

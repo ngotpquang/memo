@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import Memo from '../memo/Memo.js';
 import MemoForm from '../memo-form/MemoForm.js';
-import $ from 'jquery';
 import './MemoBox.css';
+import { fetchMemo, addMemo } from "../../action/memoAction";
 
 class MemoBox extends Component {
     constructor(props){
         super(props);
-        let createdDate = new Date().getTime();
-        let updatedDate = new Date().getTime();
-        let userId = localStorage.getItem('userId');
+        const createdDate = new Date().getTime();
+        const updatedDate = new Date().getTime();
+        const username = localStorage.getItem('username');
         let memos = [];
-        if (userId == null){
+        if (!username){
             memos = [
                 {id: 1, title: "Let's make it awesome", content: "You're gonna be on top", 
                 createdDate: createdDate, updatedDate: updatedDate},
@@ -27,23 +27,24 @@ class MemoBox extends Component {
         }
         this.state = {
             isUpdated: false,
-            userId: localStorage.getItem('userId'),
-            memos: memos
+            memos: memos.length > 0 ? memos : this.props.memos
         }
     }
-    componentWillMount(){
-        this._fetchMemo();
-    }
+    // componentWillMount(){
+    //     this._fetchMemo();
+    // }
     componentDidMount(){
-        // this._timeInterval = setInterval(() => this._fetchMemo(), 3000);
         this._fetchMemo();
     }
-    componentWillUnmount(){
-        // clearInterval(this._timeInterval);
+
+    componentWillReceiveProps(nextProps){
+        if (nextProps && nextProps.memos.length !== this.props.memos.length) {
+            this.setState({memos: nextProps.memos});
+        }
     }
     render() {
-        let userId = this.state.userId;
-        if (userId){
+        let userId = this.props.userId;
+        if (userId !== -1){
             return (
               <div className="memo-box">
                   <MemoForm addMemo={this._addMemo.bind(this)} />
@@ -63,18 +64,7 @@ class MemoBox extends Component {
         }
     }
     _fetchMemo(){
-        $.ajax({
-            method: 'GET',
-            url: 'http://localhost:8080/api/memo/user/id?userId=' + this.state.userId,
-            success: (result) => {
-                this.setState({
-                    memos: result
-                })
-            },
-            error: (error) => {
-                // console.log(error);
-            }
-        })
+        fetchMemo(this.props.userId);
     }
 
     _displayMemo(){
@@ -96,27 +86,15 @@ class MemoBox extends Component {
     }
 
     _addMemo(title, content){
-        let memo = {
-            userId: this.state.userId,
+        const memo = {
+            userId: this.props.userId,
             title: title,
             content: content
         }
-        console.log(memo);
-        $.ajax({
-            method: 'POST',
-            url: 'http://localhost:8080/api/memo',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            data: JSON.stringify(memo),
-            success: (result) => {
-                console.log(result);
-                this._fetchMemo();
-            },
-            error: (error) => {
-                console.log(error);
-            }
-        })
+        addMemo(memo);
+        setTimeout(() => {
+            this._fetchMemo();
+        }, 500);
     }
   }
   

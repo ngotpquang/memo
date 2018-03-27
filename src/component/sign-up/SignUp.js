@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './SignUp.css';
-import $ from 'jquery';
+import { signUp } from "../../action/userAction";
 
 class SignUp extends Component {
   constructor(props){
     super(props);
     this.state = {
-      errMsg: ""
+      errorMessage: ""
     }
   }
   render() {
@@ -24,7 +24,7 @@ class SignUp extends Component {
               <button type="submit" className="submit-button">Sign up</button>
             </div>
             <div className="clear"></div>
-            <p className="errMsg">{this.state.errMsg}</p>
+            <p className="errMsg">{ this.state.errorMessage !== "" ? this.state.errorMessage : (this.props.signUpMessage ? this.props.signUpMessage : "") }</p>
         </form>
       </div>
     );
@@ -32,37 +32,23 @@ class SignUp extends Component {
 
   _handleSubmit(event){
     event.preventDefault();
-    let username = this._username;
-    let password = this._password;
-    let rePassword = this._rePassword;
+    this.setState({errorMessage: ""});
+    const username = this._username;
+    const password = this._password;
+    const rePassword = this._rePassword;
     if ("" === username.value || "" === password.value || "" === rePassword.value){
-      this.setState({errMsg: "Please enter all three username, password and retype password fields."});
+      this.setState({errorMessage: "Please enter all three username, password and retype password fields."});
     } else {
       if (password.value !== rePassword.value){
-        this.setState({errMsg: "Passwords don't match. Please try again."});
+        this.setState({errorMessage: "Passwords don't match. Please try again."});
       } else {
-        let info = {
+        const account = {
           username: username.value,
           password: password.value
         }
-        $.ajax({
-          method: 'POST',
-          url: 'http://localhost:8080/api/uzer/signup',
-          data: JSON.stringify(info),
-          headers:{
-            'Content-Type': 'application/json'
-          },
-          success: (result) => {
-            console.log(result);
-            this.props.history.push("/");
-          },
-          error: (error) => {
-            console.log(error);
-          }
-        })
+        signUp(account);
       }
     }
-    
   }
 }
   

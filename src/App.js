@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Navigation from './components/navigation/Navigation';
-import Home from './components/home/Home';
+import NavigationContainer from './component/navigation/Navigation';
+import Home from './component/home/Home';
 
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Navigation />
-        <Home />
+          <NavigationContainer />
+          <Home />
       </div>
     );
   }
